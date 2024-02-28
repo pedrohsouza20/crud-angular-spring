@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { SharedModule } from '../shared/shared.module';
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses/courses.component';
-import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress
   imports: [
     CommonModule,
     CoursesRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    SharedModule
   ],
 })
 export class CoursesModule { }
