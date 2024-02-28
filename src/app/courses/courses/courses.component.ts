@@ -10,13 +10,10 @@ import { CoursesService } from '../services/courses.service';
   styleUrl: './courses.component.scss',
 })
 export class CoursesComponent {
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns = ['name', 'category'];
 
   constructor(private coursesService: CoursesService) {
-    this.courses = this.coursesService.list().pipe(
-      first(),
-      tap((courses) => console.log(courses))
-    );
+    this.courses$ = this.coursesService.list();
   }
 }
